@@ -10,7 +10,4 @@ jobs:
     executor: ruby_iprange
     steps:
       - run: echo “Hello World”
-workflows:
-  build-workflow:
-    jobs:
-      - build
+
