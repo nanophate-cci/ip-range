@@ -1,9 +1,13 @@
 version: 2.1
-jobs:
-  build:
-    circleci_ip_ranges: true # opts the job into the IP ranges feature
+​executors:
+  ruby_iprange:
     docker:
       - image: cimg/ruby:3.2.2
+    resource_class: medium
+    circleci_ip_ranges: true
+jobs:
+  build:
+    executor: ruby_iprange
     steps:
       - run: echo “Hello World”
 workflows:
