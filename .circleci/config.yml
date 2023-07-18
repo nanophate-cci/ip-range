@@ -10,4 +10,5 @@ jobs:
     executor: ruby
     circleci_ip_ranges: true
     steps:
+      - run: curl http://checkip.amazonaws.com/
       - run: echo “Hello World”
