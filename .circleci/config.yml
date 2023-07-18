@@ -4,10 +4,10 @@ executors:
   ruby:
     docker:
       - image: cimg/ruby:3.2.2
-    circleci_ip_ranges: true
 
 jobs:
   build:
     executor: ruby
+    circleci_ip_ranges: true
     steps:
       - run: echo “Hello World”
