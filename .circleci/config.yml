@@ -1,13 +1,14 @@
 version: 2.1
-​executors:
-  ruby_iprange:
+
+executors:
+  ruby:
     docker:
       - image: cimg/ruby:3.2.2
-    resource_class: medium
     circleci_ip_ranges: true
+
 jobs:
   build:
-    executor: ruby_iprange
+    docker:
+    executor: ruby
     steps:
       - run: echo “Hello World”
-
