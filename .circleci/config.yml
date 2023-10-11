@@ -3,12 +3,16 @@ version: 2.1
 executors:
   ruby:
     docker:
-      - image: cimg/ruby:3.2.2
+      - image: cimg/base:stable
 
 jobs:
   build:
+    parameters:
+      ip-ranges:
+        type: boolean
+        default: true
     executor: ruby
-    circleci_ip_ranges: false
+    circleci_ip_ranges: << parameters.ip-ranges >> 
     steps:
       - run: curl http://checkip.amazonaws.com/
       - run: echo “Hello World”
